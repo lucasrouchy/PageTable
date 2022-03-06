@@ -28,7 +28,7 @@ void initialize_mem(void)
       mem[i] = 0
     }
     mem[0] = 1;
-    
+
 }
 
 //
@@ -38,7 +38,14 @@ void initialize_mem(void)
 //
 unsigned char get_page(void)
 {
-    // TODO
+
+    for (int i =0; i<PAGE_COUNT; ++i) {
+      if (mem[i] == 0) {
+        mem[i] =1;
+        return i;
+      }
+    }
+    return 0xff
 }
 
 //
@@ -48,7 +55,7 @@ unsigned char get_page(void)
 //
 void new_process(int proc_num, int page_count)
 {
-    // TODO
+
 }
 
 //
