@@ -24,7 +24,11 @@ int get_address(int page, int offset)
 //
 void initialize_mem(void)
 {
-    // TODO
+    for (int i =0; i < MEM_SIZE; ++i) {
+      mem[i] = 0
+    }
+    mem[0] = 1;
+    
 }
 
 //
@@ -97,7 +101,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "usage: ptsim commands\n");
         return 1;
     }
-    
+
     initialize_mem();
 
     for (int i = 1; i < argc; i++) {
